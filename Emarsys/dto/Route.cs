@@ -16,12 +16,6 @@ namespace Route_Calculator.dto
             this.name = name;
         }
 
-        public Route(string name, Route previous)
-        {
-            this.name = name;
-            this.route = previous;
-        }
-
         public Route GetRoute()
         {
             return route;

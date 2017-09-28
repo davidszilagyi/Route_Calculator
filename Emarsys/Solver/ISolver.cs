@@ -9,10 +9,10 @@ namespace Route_Calculator.solver
 {
     interface ISolver<T>
     {
-        void AddRule(string name, Route previous);
+        void AddRule(Route to, Route previous);
 
         List<T> GetRoute(T from, T to, bool sort);
 
-        bool CheckCircularity();
+        bool HasLoop();
     }
 }

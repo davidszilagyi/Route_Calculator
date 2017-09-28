@@ -9,16 +9,40 @@ namespace Route_Calculator.solver
 {
     class Solver<T> : ISolver<T>
     {
-        private List<Route> Rules;
+        public List<Route> Rules = new List<Route>();
 
-        public void AddRule(string name, Route previous)
+        public void AddRule(Route to, Route previous)
         {
-            
+            foreach(Route route in Rules)
+            {
+                if(route.Equals(to))
+                {
+                    to.SetRoute(previous);
+                    break;
+                }
+            }
         }
 
-        public bool CheckCircularity()
+        public bool HasLoop()
         {
-            throw new NotImplementedException();
+            Route fast = Rules[0];
+            Route slow = Rules[0];
+            while(true)
+            {
+                slow = slow.GetRoute();
+                if (slow.GetRoute() != null)
+                {
+                    fast = fast.GetRoute().GetRoute();
+                }
+                if (slow == null || fast == null)
+                {
+                    return false;
+                }
+                if (slow == fast)
+                {
+                    return true;
+                }
+            }
         }
 
         public List<T> GetRoute(T from, T to, bool sort)
