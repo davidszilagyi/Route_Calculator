@@ -18,5 +18,11 @@ namespace Route_Calculator
         {
             throw new NotImplementedException();
         }
+
+        [Test]
+        public void TestCircularity()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
