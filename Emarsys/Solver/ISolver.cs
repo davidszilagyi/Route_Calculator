@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Route_Calculator.dto;
 
-namespace Route_Calculator.Solver
+namespace Route_Calculator.solver
 {
     interface ISolver<T>
     {
-        void AddRule();
+        void AddRule(string name, Route previous);
 
-        T[] GetRoute(T from, T to, bool sort);
+        List<T> GetRoute(T from, T to, bool sort);
 
         bool CheckCircularity();
     }

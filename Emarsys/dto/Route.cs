@@ -4,14 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Route_Calculator.Route
+namespace Route_Calculator.dto
 {
     class Route
     {
+        string name;
         Route route;
 
-        public Route(Route previous)
+        public Route(string name)
         {
+            this.name = name;
+        }
+
+        public Route(string name, Route previous)
+        {
+            this.name = name;
             this.route = previous;
         }
 
@@ -20,9 +27,19 @@ namespace Route_Calculator.Route
             return route;
         }
 
+        public string GetName()
+        {
+            return name;
+        }
+
         public void SetRoute(Route route)
         {
             this.route = route;
+        }
+
+        public void SetName(string name)
+        {
+            this.name = name;
         }
     }
 }

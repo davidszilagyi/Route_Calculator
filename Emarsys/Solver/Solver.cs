@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Route_Calculator.dto;
 
-namespace Route_Calculator.Solver
+namespace Route_Calculator.solver
 {
     class Solver<T> : ISolver<T>
     {
-        public void AddRule()
+        private List<Route> Rules;
+
+        public void AddRule(string name, Route previous)
         {
-            throw new NotImplementedException();
+            
         }
 
         public bool CheckCircularity()
@@ -18,7 +21,7 @@ namespace Route_Calculator.Solver
             throw new NotImplementedException();
         }
 
-        public T[] GetRoute(T from, T to, bool sort)
+        public List<T> GetRoute(T from, T to, bool sort)
         {
             throw new NotImplementedException();
         }

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using Route_Calculator.Solver;
+using Route_Calculator.solver;
 
 namespace Route_Calculator
 {
@@ -19,7 +16,7 @@ namespace Route_Calculator
             Assert.AreEqual(new List<string> { "x" }, solver.GetRoute("x", "x", false));
             Assert.AreEqual(new List<string> { "x", "y", "z" }, solver.GetRoute("x", "z", false));
             Assert.AreEqual(new List<string> { "x", "z", "y" }, solver.GetRoute("x", "y", true));
-            Assert.AreEqual(new List<string> { "uxzwvy", }, solver.GetRoute("u", "y", true));
+            Assert.AreEqual(new List<string> { "u", "x", "z", "w", "v", "y" }, solver.GetRoute("u", "y", true));
         }
 
         [Test]
