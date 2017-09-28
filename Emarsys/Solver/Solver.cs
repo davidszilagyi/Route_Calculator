@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Emarsys.Solver
+namespace Route_Calculator.Solver
 {
     class Solver<T> : ISolver<T>
     {

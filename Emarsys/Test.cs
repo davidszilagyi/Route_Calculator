@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using Emarsys.Solver;
+using Route_Calculator.Solver;
 
-namespace Emarsys
+namespace Route_Calculator
 {
     [TestFixture]
     class Test

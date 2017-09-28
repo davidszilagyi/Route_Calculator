@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2103A33A-2FBB-4D83-A10E-E6F3F6D057D2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Emarsys</RootNamespace>
-    <AssemblyName>Emarsys</AssemblyName>
+    <RootNamespace>Route_Calculator</RootNamespace>
+    <AssemblyName>Route_Calculator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
