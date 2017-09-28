@@ -16,7 +16,10 @@ namespace Route_Calculator
         [Test]
         public void TestGetRoute()
         {
-            
+            Assert.AreEqual(new List<string> { "x" }, solver.GetRoute("x", "x", false));
+            Assert.AreEqual(new List<string> { "x", "y", "z" }, solver.GetRoute("x", "z", false));
+            Assert.AreEqual(new List<string> { "x", "z", "y" }, solver.GetRoute("x", "y", true));
+            Assert.AreEqual(new List<string> { "uxzwvy", }, solver.GetRoute("u", "y", true));
         }
 
         [Test]
