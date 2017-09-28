@@ -8,12 +8,17 @@ namespace Route_Calculator.Solver
 {
     class Solver<T> : ISolver<T>
     {
+        public void AddRule()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool CheckCircularity()
         {
             throw new NotImplementedException();
         }
 
-        public T[] GetRoute()
+        public T[] GetRoute(T from, T to, bool sort)
         {
             throw new NotImplementedException();
         }

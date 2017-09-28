@@ -16,7 +16,7 @@ namespace Route_Calculator
         [Test]
         public void TestGetRoute()
         {
-            throw new NotImplementedException();
+            
         }
 
         [Test]

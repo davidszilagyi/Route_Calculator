@@ -8,7 +8,9 @@ namespace Route_Calculator.Solver
 {
     interface ISolver<T>
     {
-        T[] GetRoute();
+        void AddRule();
+
+        T[] GetRoute(T from, T to, bool sort);
 
         bool CheckCircularity();
     }
