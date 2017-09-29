@@ -52,26 +52,18 @@ namespace Route_Calculator.solver
                 List<Route> result = new List<Route> { from };
                 for (int i = 0; i < Rules.Count; i++)
                 {
-                    bool found = false;
                     for (int k = 0; k < Rules.Count; k++)
                     {
                         if (Rules[k].GetRoute() != null && Rules[k].GetRoute().Equals(Rules[i]))
                         {
                             result.Insert(result.IndexOf(Rules[i]) + 1, Rules[k]);
-                            found = true;
                             break;
                         }
-                    }
-                    if (!found)
-                    {
-                        for (int l = 0; l < Rules.Count; l++)
+                        else if (Rules[k].GetRoute() == null && !result.Contains(Rules[k]))
                         {
-                            if (Rules[l].GetRoute() == null && !result.Contains(Rules[l]))
-                            {
-                                result.Add(Rules[l]);
-                                break;
-                            }
+                            result.Add(Rules[k]);
                         }
+
                     }
                 }
                 return result;
