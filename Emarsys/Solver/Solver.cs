@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Route_Calculator.dto;
 
 namespace Route_Calculator.solver
@@ -13,9 +9,9 @@ namespace Route_Calculator.solver
 
         public void AddRule(Route to, Route previous)
         {
-            foreach(Route route in Rules)
+            foreach (Route route in Rules)
             {
-                if(route.Equals(to))
+                if (route.Equals(to))
                 {
                     to.SetRoute(previous);
                     break;
@@ -27,7 +23,7 @@ namespace Route_Calculator.solver
         {
             Route fast = Rules[0];
             Route slow = Rules[0];
-            while(true)
+            while (true)
             {
                 slow = slow.GetRoute();
                 if (slow.GetRoute() != null)
@@ -45,9 +41,41 @@ namespace Route_Calculator.solver
             }
         }
 
-        public List<T> GetRoute(T from, T to, bool sort)
+        public List<Route> GetRoutes(Route from, bool sort)
         {
-            throw new NotImplementedException();
+            if (!sort)
+            {
+                return Rules;
+            }
+            else
+            {
+                List<Route> result = new List<Route> { from };
+                for (int i = 0; i < Rules.Count; i++)
+                {
+                    bool found = false;
+                    for (int k = 0; k < Rules.Count; k++)
+                    {
+                        if (Rules[k].GetRoute() != null && Rules[k].GetRoute().Equals(Rules[i]))
+                        {
+                            result.Insert(result.IndexOf(Rules[i]) + 1, Rules[k]);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        for (int l = 0; l < Rules.Count; l++)
+                        {
+                            if (Rules[l].GetRoute() == null && !result.Contains(Rules[l]))
+                            {
+                                result.Add(Rules[l]);
+                                break;
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
         }
     }
 }

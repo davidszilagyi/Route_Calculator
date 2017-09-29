@@ -11,8 +11,8 @@ namespace Route_Calculator.solver
     {
         void AddRule(Route to, Route previous);
 
-        List<T> GetRoute(T from, T to, bool sort);
+        List<Route> GetRoutes(Route from, bool sort);
 
-        bool HasLoop();
+        bool HasLoop(); 
     }
 }
